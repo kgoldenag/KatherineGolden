@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katherine Golden — Technology Executive & AI Leader</title>
+  <meta name="description" content="Katherine Golden is a technology executive specializing in AI strategy, engineering leadership, and digital transformation at enterprise scale.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,400;1,9..144,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0e0e0c;
+      --paper: #f5f2ec;
+      --gold: #b8924a;
+      --gold-light: #d4aa6e;
+      --steel: #2a3540;
+      --mist: #8a9aa8;
+      --rule: #d6cfc3;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      background: var(--steel);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .header-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      letter-spacing: 0.05em;
+      color: var(--paper);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .logo span { color: var(--gold-light); font-weight: 300; }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--mist);
+      text-decoration: none;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .connect-btn {
+      display: inline-block;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      text-decoration: none;
+      padding: 8px 14px;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .hero {
+      background: var(--steel);
+      color: var(--paper);
+      padding: 82px 0 72px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 9px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-weight: 200;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    h1 em { font-style: italic; color: var(--gold-light); }
+
+    .hero p {
+      max-width: 560px;
+      color: var(--mist);
+      margin-bottom: 24px;
+      font-size: 12px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      display: inline-block;
+      text-decoration: none;
+      padding: 10px 16px;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--ink);
+      border: 1px solid var(--gold);
+    }
+
+    .btn-ghost {
+      color: var(--mist);
+      border: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .credentials {
+      border-left: 1px solid rgba(255,255,255,0.12);
+      padding-left: 28px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .cred {
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .cred:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .cred-role {
+      color: var(--gold-light);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .cred-org {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      letter-spacing: 0.04em;
+    }
+
+    .cred-detail {
+      color: var(--mist);
+      font-size: 10px;
+      margin-top: 3px;
+    }
+
+    .stats {
+      padding: 34px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .stat {
+      text-align: center;
+      border-right: 1px solid var(--rule);
+      padding: 0 8px;
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat-number {
+      font-family: 'Fraunces', serif;
+      font-size: 38px;
+      font-weight: 300;
+      color: var(--steel);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-number em { font-style: normal; color: var(--gold); }
+
+    .stat-label {
+      color: var(--mist);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 9px;
+    }
+
+    section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section-label {
+      font-size: 9px;
+      color: var(--gold);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--steel);
+      font-size: 34px;
+      font-weight: 400;
+      margin-bottom: 28px;
+      line-height: 1.1;
+    }
+
+    .focus-grid,
+    .writing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .focus-card {
+      border: 1px solid var(--rule);
+      border-top: 3px solid var(--gold);
+      background: #fff;
+      padding: 22px;
+    }
+
+    .focus-num {
+      font-family: 'Fraunces', serif;
+      font-size: 34px;
+      line-height: 1;
+      color: var(--rule);
+      margin-bottom: 10px;
+    }
+
+    .focus-title {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--steel);
+      font-size: 21px;
+      margin-bottom: 6px;
+    }
+
+    .focus-desc {
+      color: #6d6d6d;
+      font-size: 11px;
+    }
+
+    .writing {
+      background: #faf9f6;
+    }
+
+    .article {
+      border: 1px solid var(--rule);
+      background: #fff;
+      padding: 20px;
+    }
+
+    .article-tag {
+      color: var(--gold);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      margin-bottom: 8px;
+    }
+
+    .article-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      color: var(--steel);
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .article-meta {
+      color: var(--mist);
+      font-size: 10px;
+    }
+
+    .connect {
+      text-align: center;
+      background: #fff;
+    }
+
+    .connect p {
+      width: min(660px, 100%);
+      margin: 0 auto 20px;
+      color: #666;
+      font-size: 11px;
+    }
+
+    footer {
+      background: var(--steel);
+      color: var(--mist);
+      padding: 36px 0;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: var(--paper);
+      margin-bottom: 8px;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-brand span { color: var(--gold-light); }
+
+    .footer-title {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 9px;
+      margin-bottom: 10px;
+    }
+
+    .footer-list {
+      list-style: none;
+      display: grid;
+      gap: 4px;
+    }
+
+    .footer-list a {
+      color: var(--mist);
+      text-decoration: none;
+    }
+
+    .footer-list a:hover {
+      color: var(--gold-light);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .focus-grid,
+      .writing-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .credentials { border-left: none; padding-left: 0; margin-top: 18px; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .stat { border-right: none; }
+      nav { display: none; }
+      .header-inner { gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo">Katherine <span>Golden</span></a>
+      <nav>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#speaking">Speaking</a></li>
+          <li><a href="#writing">Writing</a></li>
+        </ul>
+      </nav>
+      <a href="#connect" class="connect-btn">Connect</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="about">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Technology Executive · AI Strategy · Enterprise Leadership</div>
+          <h1>Building the systems that let <em>great teams</em> do extraordinary work.</h1>
+          <p>I lead technology organizations through complexity — designing the platforms, cultures, and strategies that turn ambitious vision into durable results.</p>
+          <div class="cta-row">
+            <a href="#work" class="btn-primary">View My Work</a>
+            <a href="#speaking" class="btn-ghost">Invite Me to Speak</a>
+          </div>
+        </div>
+        <div class="credentials">
+          <article class="cred">
+            <div class="cred-role">Current · CTO / VP Engineering</div>
+            <div class="cred-org">[Current Company]</div>
+            <div class="cred-detail">Enterprise · Series D / Fortune 500</div>
+          </article>
+          <article class="cred">
+            <div class="cred-role">Previously</div>
+            <div class="cred-org">[Prior Company]</div>
+            <div class="cred-detail">Scaled engineering org 3× in 18 months</div>
+          </article>
+          <article class="cred">
+            <div class="cred-role">Advisor · Board Member</div>
+            <div class="cred-org">[Portfolio Company]</div>
+            <div class="cred-detail">AI infrastructure / Developer tools</div>
+          </article>
+          <article class="cred">
+            <div class="cred-role">Speaker & Author</div>
+            <div class="cred-org">Forbes · AWS re:Invent · SaaStr</div>
+            <div class="cred-detail">AI leadership, org design, transformation</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Impact stats">
+      <div class="container stats-grid">
+        <div class="stat">
+          <div class="stat-number"><em>18</em>+</div>
+          <div class="stat-label">Years in Tech Leadership</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number"><em>400</em>+</div>
+          <div class="stat-label">Engineers Led Globally</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number"><em>$1.2</em>B</div>
+          <div class="stat-label">Technology Value Delivered</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number"><em>50</em>+</div>
+          <div class="stat-label">Keynotes & Conference Talks</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-label">Areas of Focus</div>
+        <h2>Where I do my best work</h2>
+        <div class="focus-grid">
+          <article class="focus-card">
+            <div class="focus-num">01</div>
+            <h3 class="focus-title">Enterprise AI Strategy</h3>
+            <p class="focus-desc">Designing AI programs that move from proof-of-concept to production with governance, change management, and ROI built in from day one.</p>
+          </article>
+          <article class="focus-card">
+            <div class="focus-num">02</div>
+            <h3 class="focus-title">Engineering Leadership</h3>
+            <p class="focus-desc">Building engineering organizations that ship with velocity and care through talent systems, culture, process architecture, and structures that scale.</p>
+          </article>
+          <article class="focus-card">
+            <div class="focus-num">03</div>
+            <h3 class="focus-title">Digital Transformation</h3>
+            <p class="focus-desc">Leading operational, cultural, and architectural change that modernization demands at enterprise speed.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="writing" id="writing">
+      <div class="container">
+        <div class="section-label">Latest Writing</div>
+        <h2>Perspectives on technology and leadership</h2>
+        <div class="writing-grid">
+          <article class="article">
+            <div class="article-tag">AI Strategy</div>
+            <h3 class="article-title">Why Your AI Roadmap Needs a People Strategy First</h3>
+            <div class="article-meta">Feb 2026 · 8 min read</div>
+          </article>
+          <article class="article">
+            <div class="article-tag">Engineering Culture</div>
+            <h3 class="article-title">The Engineering Operating System: How I Think About Org Design</h3>
+            <div class="article-meta">Jan 2026 · 10 min read</div>
+          </article>
+          <article class="article">
+            <div class="article-tag">Leadership</div>
+            <h3 class="article-title">On Making Decisions With Incomplete Information — Every Single Day</h3>
+            <div class="article-meta">Jan 2026 · 6 min read</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="connect" id="speaking">
+      <div class="container">
+        <div class="section-label">Speaking & Advisory</div>
+        <h2>Open to executive roles, speaking, and advisory conversations</h2>
+        <p>If you're hiring a technology leader, curating a conference program, or looking for strategic guidance on AI and digital transformation, I'd love to connect.</p>
+        <a href="#connect" class="btn-primary">Start a Conversation</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="connect">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">Katherine <span>Golden</span></div>
+        <p>Technology executive, speaker, and writer focused on AI strategy, engineering leadership, and the human systems that make great technology possible.</p>
+      </div>
+      <div>
+        <div class="footer-title">Navigation</div>
+        <ul class="footer-list">
+          <li>About</li>
+          <li>Work</li>
+          <li>Speaking</li>
+          <li>Writing</li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">Connect</div>
+        <ul class="footer-list">
+          <li><a href="https://www.linkedin.com/in/kgoldenag/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="mailto:kgoldenag@gmail.com">kgoldenag@gmail.com</a></li>
+          <li>Newsletter</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
