@@ -8,84 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,400;1,9..144,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="common.css">
   <style>
-    :root {
-      --ink: #0e0e0c;
-      --paper: #f5f2ec;
-      --gold: #b8924a;
-      --gold-light: #d4aa6e;
-      --steel: #2a3540;
-      --mist: #8a9aa8;
-      --rule: #d6cfc3;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: 'DM Mono', monospace;
-      font-size: 13px;
-      line-height: 1.7;
-    }
-
-    .container {
-      width: min(1120px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .site-header {
-      background: var(--steel);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 20;
-    }
-
-    .header-inner {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px;
-      letter-spacing: 0.05em;
-      color: var(--paper);
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .logo span { color: var(--gold-light); font-weight: 300; }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav a {
-      color: var(--mist);
-      text-decoration: none;
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-
-    .connect-btn {
-      display: inline-block;
-      color: var(--gold);
-      border: 1px solid var(--gold);
-      text-decoration: none;
-      padding: 8px 14px;
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
 
     .hero {
       background: var(--steel);
@@ -223,19 +147,6 @@
       font-size: 9px;
     }
 
-    section {
-      padding: 64px 0;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .section-label {
-      font-size: 9px;
-      color: var(--gold);
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
     h2 {
       font-family: 'Cormorant Garamond', serif;
       color: var(--steel);
@@ -331,52 +242,93 @@
       font-size: 11px;
     }
 
-    footer {
-      background: var(--steel);
-      color: var(--mist);
-      padding: 36px 0;
-      font-size: 10px;
-      letter-spacing: 0.08em;
-    }
-
-    .footer-grid {
+    .email-form {
+      width: min(720px, 100%);
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 24px;
-      align-items: start;
+      gap: 12px;
+      text-align: left;
+      background: #faf9f6;
+      border: 1px solid var(--rule);
+      padding: 18px;
     }
 
-    .footer-brand {
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 40;
+    }
+
+    .modal.is-open {
+      display: flex;
+    }
+
+    .modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(14, 14, 12, 0.6);
+    }
+
+    .modal-panel {
+      position: relative;
+      width: min(760px, 100%);
+      background: #fff;
+      border: 1px solid var(--rule);
+      padding: 18px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      border: 1px solid var(--rule);
+      background: #fff;
+      color: var(--steel);
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .modal-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      color: var(--paper);
-      margin-bottom: 8px;
-      letter-spacing: 0.05em;
+      color: var(--steel);
+      font-size: 30px;
+      margin: 4px 0 14px;
     }
 
-    .footer-brand span { color: var(--gold-light); }
-
-    .footer-title {
-      color: var(--gold);
+    .email-form label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
-      font-size: 9px;
-      margin-bottom: 10px;
-    }
-
-    .footer-list {
-      list-style: none;
+      color: var(--steel);
       display: grid;
-      gap: 4px;
+      gap: 6px;
     }
 
-    .footer-list a {
-      color: var(--mist);
-      text-decoration: none;
+    .email-form input,
+    .email-form textarea {
+      width: 100%;
+      border: 1px solid var(--rule);
+      background: #fff;
+      color: var(--ink);
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      padding: 10px 12px;
     }
 
-    .footer-list a:hover {
-      color: var(--gold-light);
+    .email-form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .email-form button {
+      justify-self: start;
+      cursor: pointer;
     }
 
     @media (max-width: 980px) {
@@ -392,47 +344,40 @@
       .stat { border-right: none; }
       nav { display: none; }
       .header-inner { gap: 12px; }
+      .modal-panel { padding: 16px; }
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#top" class="logo">Katherine <span>Golden</span></a>
-      <nav>
-        <ul>
-           <li><a href="Katherine_Golden_Executive_Bio.docx">Bio</a></li>
-          <li><a href="Katherine_Golden_Resume.doc">Resume</a></li>
-                  </ul>
-      </nav>
-      <a href="https://www.linkedin.com/in/kgoldenag/" target="_blank" rel="noopener noreferrer" class="connect-btn">Connect</a>
-    </div>
-  </header>
+  <div id="site-header-root" data-header-variant="index"></div>
 
   <main id="top">
     <section class="hero" id="about">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Technology Executive · AI Strategy · Enterprise Leadership</div>
-          <h1>Building the systems that let <em>great teams</em> do extraordinary work.</h1>
-          <p>I lead technology organizations through complexity — designing the platforms, cultures, and strategies that turn ambitious vision into durable results.</p>
-          
+          <div class="eyebrow">Technology Executive · Board Advisor · AI & Platform Strategy</div>
+          <h1>Building the platforms that let <em>great teams</em> do extraordinary work.</h1>
+          <p>I lead technology organizations through complexity - shaping strategy, modernizing platforms, and enabling teams to deliver durable business outcomes at global scale.</p>
+          <div class="cta-row">
+            <!-- <a href="#work" class="btn-primary">View My Work</a> -->
+            <!-- <a href="#speaking" class="btn-ghost">Invite Me to Speak</a> -->
+          </div>
         </div>
         <div class="credentials">
           <article class="cred">
-            <div class="cred-role">Current · CTO / CIO</div>
+            <div class="cred-role">CTO · CIO · Board Member</div>
             <div class="cred-org">OEConnection</div>
-            <div class="cred-detail">GM, Ford, Private Equity</div>
+            <div class="cred-detail">Leading automotive parts and service software platform backed by private equity, Ford, and General Motors.</div>
           </article>
           <article class="cred">
-            <div class="cred-role">Current · Board Member</div>
-            <div class="cred-org">OEC</div>
-            <div class="cred-detail">India and Poland</div>
-          </article>
-          <article class="cred">
-            <div class="cred-role">Previous</div>
+            <div class="cred-role">Vice President, Technology</div>
             <div class="cred-org">Corbis</div>
-            <div class="cred-detail">Bill Gates</div>
+            <div class="cred-detail">Digital media licensing company privately owned by Bill Gates with operations in 50 countries.</div>
+          </article>
+          <article class="cred">
+            <div class="cred-role">Director, Applications and New Product Development</div>
+            <div class="cred-org">American Greetings</div>
+            <div class="cred-detail">Global digital greetings and media platform serving millions of subscribers worldwide.</div>
           </article>
         </div>
       </div>
@@ -450,11 +395,11 @@
         </div>
         <div class="stat">
           <div class="stat-number"><em>3x</em>+</div>
-          <div class="stat-label">Value Delivered</div>
+          <div class="stat-label">Enterprise Value Delivered</div>
         </div>
         <div class="stat">
           <div class="stat-number"><em>10</em>+</div>
-          <div class="stat-label">Patents</div>
+          <div class="stat-label">Patents (Named Inventor)</div>
         </div>
       </div>
     </section>
@@ -466,54 +411,74 @@
         <div class="focus-grid">
           <article class="focus-card">
             <div class="focus-num">01</div>
-            <h3 class="focus-title">Enterprise AI Strategy</h3>
-            <p class="focus-desc">Designing AI programs that move from proof-of-concept to production with governance, change management, and ROI built in from day one.</p>
-          </article>
+            <h3 class="focus-title">Building High-Performing Global Technology Teams</h3>
+            <p class="focus-desc">Leading global engineering organizations that deliver with speed and quality through strong talent systems, culture, and scalable operating models.</p>
+          </article>          
           <article class="focus-card">
             <div class="focus-num">02</div>
-            <h3 class="focus-title">Engineering Leadership</h3>
-            <p class="focus-desc">Building engineering organizations that ship with velocity and care through talent systems, culture, process architecture, and structures that scale.</p>
+            <h3 class="focus-title">Enterprise AI Strategy</h3>
+            <p class="focus-desc">Designing and scaling enterprise AI programs that transform internal productivity and elevate customer value — embedding governance, adoption, and measurable ROI.</p>
           </article>
           <article class="focus-card">
             <div class="focus-num">03</div>
-            <h3 class="focus-title">Digital Transformation</h3>
-            <p class="focus-desc">Leading operational, cultural, and architectural change that modernization demands at enterprise speed.</p>
+            <h3 class="focus-title">Driving Financial Discipline & Technology Efficiency</h3>
+            <p class="focus-desc">Driving disciplined technology investment and operating models that optimize spend, scale platforms, and support sustainable growth.</p>
           </article>
         </div>
       </div>
     </section>
 
     <section class="connect" id="speaking">
-      <div class="container">
-        <div class="section-label">Speaking & Advisory</div>
-        <h2>Open to executive roles, speaking, and advisory conversations</h2>
-        <p>If you're hiring a technology leader, curating a conference program, or looking for strategic guidance on AI and digital transformation, I'd love to connect.</p>
-        <a href="#connect" class="btn-primary">Start a Conversation</a>
+      <div class="container"> 
+        <h2>Open to executive roles, board opportunities and advisory conversations.</h2>
+        <p>If you're hiring a technology leader or looking for strategic guidance on AI and digital transformation, I'd love to connect.</p>
+        <a href="https://www.linkedin.com/in/kgoldenag/" class="btn-primary" target="_blank" rel="noopener noreferrer">Start a Conversation</a>
       </div>
     </section>
   </main>
 
-  <footer id="connect">
-    <div class="container footer-grid">
-      <div>
-        <div class="footer-brand">Katherine <span>Golden</span></div>
-        <p>Technology executive, speaker, and writer focused on AI strategy, global engineering leadership, and the human systems that make great technology possible.</p>
-      </div>
-      <div>
-        <div class="footer-title">Navigation</div>
-        <ul class="footer-list">
-          <li><a href="Katherine_Golden_Executive_Bio.docx">Bio</a></li>
-          <li><a href="Katherine_Golden_Resume.doc">Resume</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-title">Connect</div>
-        <ul class="footer-list">
-          <li><a href="https://www.linkedin.com/in/kgoldenag/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+    <div id="site-footer-root" data-footer-variant="index"></div>
+  <script src="common-header.js"></script>
+  <script src="common-footer.js"></script>
+  <script>
+    (function () {
+      var openButton = document.getElementById('open-email-form');
+      var closeButton = document.getElementById('close-email-form');
+      var modal = document.getElementById('email-modal');
+
+      if (!openButton || !closeButton || !modal) {
+        return;
+      }
+
+      function openModal() {
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeModal() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+
+      openButton.addEventListener('click', function (event) {
+        event.preventDefault();
+        openModal();
+      });
+
+      closeButton.addEventListener('click', closeModal);
+
+      modal.addEventListener('click', function (event) {
+        if (event.target && event.target.getAttribute('data-close-modal') === 'true') {
+          closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
-
